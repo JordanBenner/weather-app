@@ -1,0 +1,13 @@
+body{
+  background-color: lightblue;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  display: flex;
+  justify-content: center;
+}
