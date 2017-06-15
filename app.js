@@ -4,8 +4,8 @@ var apicache = require('apicache');
 var cache = apicache.middleware;
 
 var axios = require('axios');
-var pgp=require('pg-promise')();
-var db - pgp(process.env.DATABASE.URL || {database:})
+//var pgp=require('pg-promise')();
+//var db = pgp(process.env.DATABASE.URL || {database: 'test'})
 
 app.set('view engine', 'hbs');
 
@@ -18,7 +18,7 @@ app.get('/', function(request, response){
   response.render('home.hbs', {});
 });
 var weather = process.env.weather_key
-app.get('/api', function (request, response) {
+app.get('/api', function (request, response, next) {
   console.log('Generating a new response', request.query.city);
   var config = {
     params: {
@@ -29,12 +29,12 @@ app.get('/api', function (request, response) {
   };
   axios.get('http://api.openweathermap.org/data/2.5/weather', config).then(function (r) {
     response.json(r.data);
-  });
+  })
   .catch(next);
 });
 
 var PORT = process.env.PORT || 8000;
 
-app.listen(8001, function(){
+app.listen(PORT, function(){
   console.log('Listening on port ' + PORT);
 })
