@@ -4,6 +4,8 @@ var apicache = require('apicache');
 var cache = apicache.middleware;
 
 var axios = require('axios');
+var pgp=require('pg-promise')();
+var db - pgp(process.env.DATABASE.URL || {database:})
 
 app.set('view engine', 'hbs');
 
@@ -15,7 +17,7 @@ app.use('/static', express.static('public'));
 app.get('/', function(request, response){
   response.render('home.hbs', {});
 });
-
+var weather = process.env.weather_key
 app.get('/api', function (request, response) {
   console.log('Generating a new response', request.query.city);
   var config = {
