@@ -30,6 +30,8 @@ app.get('/api', function (request, response) {
   });
 });
 
+var PORT = process.env.PORT || 8000;
+
 app.listen(8001, function(){
-  console.log('Listening on port 8001');
+  console.log('Listening on port ' + PORT);
 })
