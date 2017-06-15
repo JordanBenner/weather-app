@@ -28,6 +28,7 @@ app.get('/api', function (request, response) {
   axios.get('http://api.openweathermap.org/data/2.5/weather', config).then(function (r) {
     response.json(r.data);
   });
+  .catch(next);
 });
 
 var PORT = process.env.PORT || 8000;
