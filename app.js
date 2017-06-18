@@ -42,6 +42,12 @@ $(function SetUnits () {
                 $("#far").addClass("active");
             }
 
+            else {
+                localStorage.Units = "metric";
+                $("#cel").removeClass("inactive");
+                $("#cel").addClass("active");
+            }
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
