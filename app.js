@@ -77,6 +77,14 @@ function SetFahrenheit() {
     $("#cel").addClass("inactive");
     location.reload();
 }
+$(function geolocation (){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(getcoordinates,showError);
+    }
+    else {
+        $("#weather").html("Geolocation is not supported by this browser.");
+    }
+});
 
 var PORT = process.env.PORT || 8000;
 
