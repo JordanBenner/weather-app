@@ -130,6 +130,20 @@ function getWeather(data_url, forecast_url, temp, wind) {
         }
     });
 
+    $.ajax ({
+        url: forecast_url,
+        type: 'GET',
+        cache: false,
+        datatype: "jsonp",
+        success: function(data) {
+            localStorage.ForecastCache = JSON.stringify(data);
+            displayData(temp, wind);
+        },
+        error: function (errorData) {
+            $("#forecast").html("Error retrieving forecast data :: "+ errorData.status);
+        }
+    });
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
