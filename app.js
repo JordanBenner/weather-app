@@ -54,6 +54,12 @@ $(function SetUnits () {
             $("#cel").addClass("active");
              break;
 
+             case "imperial":
+           $("#far").removeClass("inactive");
+           $("#far").addClass("active");
+           break;
+   }
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
