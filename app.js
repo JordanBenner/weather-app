@@ -150,6 +150,7 @@ function getWeather(data_url, forecast_url, temp, wind) {
     try {
         if ( localStorage.getItem('timestamp')> data_timestamp - 1800){
         var data = JSON.parse(localStorage.WeatherCache);
+         var forecast = JSON.parse(localStorage.ForecastCache);
 
 var PORT = process.env.PORT || 8000;
 
