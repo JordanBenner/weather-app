@@ -69,6 +69,15 @@ function SetCelsius(){
   location.reload();
 }
 
+function SetFahrenheit() {
+    localStorage.Units = "imperial";
+    $("#far").removeClass("inactive");
+    $("#far").addClass("active");
+    $("#cel").removeClass("active");
+    $("#cel").addClass("inactive");
+    location.reload();
+}
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
