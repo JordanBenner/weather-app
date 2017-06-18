@@ -59,6 +59,15 @@ $(function SetUnits () {
            $("#far").addClass("active");
            break;
    }
+ });
+function SetCelsius(){
+  localStorage.Units = "metric";
+  $("#cel").removeClass("inactive");
+  $("#cel").addClass("active");
+  $("#far").removeClass("active");
+  $("#far").addClass("inactive");
+  location.reload();
+}
 
 var PORT = process.env.PORT || 8000;
 
