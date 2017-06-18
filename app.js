@@ -144,6 +144,8 @@ function getWeather(data_url, forecast_url, temp, wind) {
         }
     });
 
+    localStorage.timestamp = data_timestamp;
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
