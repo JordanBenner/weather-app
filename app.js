@@ -33,6 +33,15 @@ app.get('/api', function (request, response, next) {
   .catch(next);
 });
 
+$(function SetUnits () {
+    switch (localStorage.getItem("Units")) {
+        case null:
+            if (window.navigator.language == "en-US") {
+                localStorage.Units = "imperial";
+                $("#far").removeClass("inactive");
+                $("#far").addClass("active");
+            }
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
