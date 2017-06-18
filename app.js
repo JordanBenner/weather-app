@@ -49,6 +49,9 @@ $(function SetUnits () {
             }
 
             break;
+            case "metric":
+            $("#cel").removeClass("inactive");
+            $("#cel").addClass("active");
 
 var PORT = process.env.PORT || 8000;
 
