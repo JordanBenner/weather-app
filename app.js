@@ -48,6 +48,8 @@ $(function SetUnits () {
                 $("#cel").addClass("active");
             }
 
+            break;
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
