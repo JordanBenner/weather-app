@@ -149,6 +149,7 @@ function getWeather(data_url, forecast_url, temp, wind) {
   function displayData(temp_units, wind_units) {
     try {
         if ( localStorage.getItem('timestamp')
+        var data = JSON.parse(localStorage.WeatherCache);
 
 var PORT = process.env.PORT || 8000;
 
