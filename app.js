@@ -86,6 +86,19 @@ $(function geolocation (){
     }
 });
 
+function getcoordinates(position) {
+    var lat=position.coords.latitude;
+    var long=position.coords.longitude;
+    var units=localStorage.getItem("Units");
+    var CurrentWeatherURL = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&units="+units;
+    var DailyForecastURL = "http://api.openweathermap.org/data/2.5/forecast/daily?lat="+lat+"&lon="+long+"&units="+units+"&cnt=1";
+    if (units == "imperial") {
+        getWeather(CurrentWeatherURL, DailyForecastURL, "F", "mph")
+    }
+    else {
+        getWeather(CurrentWeatherURL, DailyForecastURL, "C", "m\/s")
+    }
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
