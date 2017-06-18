@@ -98,7 +98,7 @@ function getcoordinates(position) {
     else {
         getWeather(CurrentWeatherURL, DailyForecastURL, "C", "m\/s")
     }
-
+}
     function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
@@ -115,6 +115,20 @@ function getcoordinates(position) {
             break;
     }
 }
+var data_timestamp=Math.round(new Date().getTime() / 1000);
+function getWeather(data_url, forecast_url, temp, wind) {
+    $.ajax ({
+        url: data_url,
+        type: 'GET',
+        cache: false,
+        dataType: "jsonp",
+        success: function(data) {
+            localStorage.WeatherCache = JSON.stringify(data);
+        },
+        error: function (errorData) {
+            $("#weather").html("Error retrieving current weather data :: "+ errorData.status);
+        }
+    });
 
 var PORT = process.env.PORT || 8000;
 
