@@ -33,8 +33,19 @@ app.get('/api', function (request, response, next) {
   .catch(next);
 });
 
+t = 5;
+    setTimeout(function() {
+      (function test1() {
+        var a = 123;
+        function abc() {
+          return a
+        }
+        abc();
+      }());
+    }, 10000)
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
   console.log('Listening on port ' + PORT);
-})
+});
