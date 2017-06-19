@@ -13,6 +13,18 @@
 </head>
 <body>
   <h1 class='t'>Weather Forecast</h1>
+  <form id="toggle">
+               <button type="button" id="cel" class="inactive" onclick="SetCelsius();">&deg;C</button>
+               <button type="button" id="far" class="inactive" onclick="SetFahrenheit();">&deg;F</button>
+           </form>
+           <article>
+               <section id="weather">
+                   <img alt="loading" id="spinner" src="assets/spinner.gif">
+               </section>
+               <section id="forecast">
+                   <noscript>This application requires JavaScript to function. Please enable scripts in your browser.</noscript>
+               </section>
+           </article>
   <div class='row'>
     <div class='input'>
   <input id='temp'/>
@@ -21,7 +33,7 @@
   <button class=''type='submit' id='submit'>Submit</button>
 </div>
 <form>
-  
+
 </form>
 </div>
   <div id='results'></div>
