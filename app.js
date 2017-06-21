@@ -115,8 +115,7 @@ function getcoordinates(position) {
             break;
     }
 }
-var data_timestamp=Math.round(new Date().getTime() / 1000);
-function getWeather(data_url, forecast_url, temp, wind) {
+
     $.ajax ({
         url: data_url,
         type: 'GET',
@@ -136,7 +135,7 @@ function getWeather(data_url, forecast_url, temp, wind) {
         cache: false,
         datatype: "jsonp",
         success: function(data) {
-          .ForecastCache = JSON.stringify(data);
+            localStorage.ForecastCache = JSON.stringify(data);
             displayData(temp, wind);
         },
         error: function (errorData) {
