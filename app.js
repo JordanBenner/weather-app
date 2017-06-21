@@ -139,7 +139,7 @@ function getWeather(data_url, forecast_url, temp, wind) {
             localStorage.ForecastCache = JSON.stringify(data);
             displayData(temp, wind);
         },
-        error: function (errorData) {
+       function (errorData) {
             $("#forecast").html("Error retrieving forecast data :: "+ errorData.status);
         }
     });
