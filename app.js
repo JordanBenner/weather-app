@@ -135,7 +135,7 @@ function getWeather(data_url, forecast_url, temp, wind) {
         type: 'GET',
         cache: false,
         datatype: "jsonp",
-        success: function(data) {
+         function(data) {
             localStorage.ForecastCache = JSON.stringify(data);
             displayData(temp, wind);
         },
@@ -144,7 +144,8 @@ function getWeather(data_url, forecast_url, temp, wind) {
         }
     });
 
-    
+    localStorage.timestamp = data_timestamp;
+  };
   function displayData(temp_units, wind_units) {
     try {
         if (localStorage.getItem('timestamp')> data_timestamp - 1800){
