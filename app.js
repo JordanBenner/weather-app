@@ -107,9 +107,7 @@ function getcoordinates(position) {
         case error.POSITION_UNAVAILABLE:
             $("#weather").html("Location information is unavailable.");
             break;
-        case error.TIMEOUT:
-            $("#weather").html("The request to get user location timed out.");
-            break;
+        
         case error.UNKNOWN_ERROR:
             $("#weather").html("An unknown error occurred.");
             break;
