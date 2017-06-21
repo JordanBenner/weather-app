@@ -96,7 +96,7 @@ function getcoordinates(position) {
         getWeather(CurrentWeatherURL, DailyForecastURL, "F", "mph")
     }
     else {
-        getWeather(CurrentWeatherURL,  "C", "m\/s")
+        getWeather(CurrentWeatherURL, DailyForecastURL, "C", "m\/s")
     }
 }
     function showError(error) {
