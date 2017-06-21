@@ -110,10 +110,7 @@ function getcoordinates(position) {
         case error.TIMEOUT:
             $("#weather").html("The request to get user location timed out.");
             break;
-        case error.UNKNOWN_ERROR:
-            $("#weather").html("An unknown error occurred.");
-            break;
-    }
+      
 }
     var data_timestamp=Math.round(new Date().getTime() / 1000);
     function getWeather(data_url, forecast_url, temp, wind) {
