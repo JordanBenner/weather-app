@@ -95,9 +95,7 @@ function getcoordinates(position) {
     if (units == "imperial") {
         getWeather(CurrentWeatherURL, DailyForecastURL, "F", "mph")
     }
-    else {
-        getWeather(CurrentWeatherURL, DailyForecastURL, "C", "m\/s")
-    }
+  
 }
     function showError(error) {
     switch(error.code) {
@@ -115,7 +113,8 @@ function getcoordinates(position) {
             break;
     }
 }
-
+    var data_timestamp=Math.round(new Date().getTime() / 1000);
+    function getWeather(data_url, forecast_url, temp, wind) {
     $.ajax ({
         url: data_url,
         type: 'GET',
