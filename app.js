@@ -95,7 +95,9 @@ function getcoordinates(position) {
     if (units == "imperial") {
         getWeather(CurrentWeatherURL, DailyForecastURL, "F", "mph")
     }
-  
+    else {
+        getWeather(CurrentWeatherURL, DailyForecastURL, "C", "m\/s")
+    }
 }
     function showError(error) {
     switch(error.code) {
