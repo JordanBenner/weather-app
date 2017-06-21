@@ -135,7 +135,7 @@ function getWeather(data_url, forecast_url, temp, wind) {
         type: 'GET',
         cache: false,
         datatype: "jsonp",
-         function(data) {
+        success: function(data) {
             localStorage.ForecastCache = JSON.stringify(data);
             displayData(temp, wind);
         },
