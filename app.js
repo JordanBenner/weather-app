@@ -149,7 +149,7 @@ function getWeather(data_url, forecast_url, temp, wind) {
   function displayData(temp_units, wind_units) {
     try {
         if (localStorage.getItem('timestamp')> data_timestamp - 1800){
-        var data = JSON.parse(localStorage.WeatherCache);
+        
          var forecast = JSON.parse(localStorage.ForecastCache);
 
          document.body.style.background = "url('assets/backgrounds/" +data.weather[0].icon+ ".jpg') no-repeat fixed 50% 50%";
@@ -161,7 +161,9 @@ function getWeather(data_url, forecast_url, temp, wind) {
             geolocation ();
         }
     }
-    
+    catch(error){
+        window.console && console.error(error);
+    }
 }
 
 
