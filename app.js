@@ -134,6 +134,7 @@ function getcoordinates(position) {
         url: forecast_url,
         type: 'GET',
         cache: false,
+        datatype: "jsonp",
         success: function(data) {
             localStorage.ForecastCache = JSON.stringify(data);
             displayData(temp, wind);
