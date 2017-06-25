@@ -157,7 +157,9 @@ function getcoordinates(position) {
            $("#weather").html('<h2>' + data.name + '</h2><img class="icon" src="assets/icons/'+data.weather[0].icon+'.png"><span id="temp">'+ data.main.temp + ' </span><span id="units">&deg;'+temp_units+'</span><p id="description">'+ data.weather[0].description + '</p><p><span id="humidity">'+ data.main.humidity + '% humidity</span>&nbsp;&nbsp;&nbsp;&nbsp;'+ Math.round(data.wind.speed) + wind_units +' wind</p>');
            $("#forecast").html('<p id="daily">Today\'s Forecast: '+forecast.list[0].weather[0].main+'</p><p>max: '+Math.round(forecast.list[0].temp.max)+'&deg;'+temp_units+' &nbsp;&nbsp;&nbsp;&nbsp;min: ' +Math.round(forecast.list[0].temp.min)+'&deg;'+temp_units+'</p>');
        }
-      
+       else {
+            geolocation ();
+        }
     }
     catch(error){
         window.console && console.error(error);
