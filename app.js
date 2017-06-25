@@ -134,7 +134,6 @@ function getcoordinates(position) {
         url: forecast_url,
         type: 'GET',
         cache: false,
-        datatype: "jsonp",
         success: function(data) {
             localStorage.ForecastCache = JSON.stringify(data);
             displayData(temp, wind);
@@ -149,7 +148,7 @@ function getcoordinates(position) {
   function displayData(temp_units, wind_units) {
     try {
         if (localStorage.getItem('timestamp')> data_timestamp - 1800){
-        var data = JSON.parse(localStorage);
+        var data = JSON.parse(localStorage.WeatherCache);
          var forecast = JSON.parse(localStorage.ForecastCache);
 
          document.body.style.background = "url('assets/backgrounds/" +data.weather[0].icon+ ".jpg') no-repeat fixed 50% 50%";
