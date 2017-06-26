@@ -12,7 +12,11 @@ app.set('view engine', 'hbs');
 
 //app.use(cache('5 minutes'))
 
-
+app.use('/axios', express.static('node_modules/axios/dist'));
+app.use('/static', express.static('public'));
+app.get('/', function(request, response){
+  response.render('home.hbs', {});
+});
 var weather = process.env.weather_key
 app.get('/api', function (request, response, next) {
   console.log('Generating a new response', request.query.city);
